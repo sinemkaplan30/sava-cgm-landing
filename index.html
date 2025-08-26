@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAVA | The Next Generation CGM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', Arial, sans-serif;
+            line-height: 1.4;
+            color: #000;
+            background: #fff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 8px;
+            color: #000;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-headline {
+            font-size: 3.8rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+        }
+        
+        .hero-subtext {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .coming-soon-badge {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            border-radius: 0;
+        }
+        
+        /* Features Section */
+        .features-section {
+            padding: 8rem 0;
+            background: #000;
+            color: #fff;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+        
+        .feature {
+            text-align: left;
+        }
+        
+        .feature-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        .feature-desc {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #ccc;
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Technology Section */
+        .tech-section {
+            padding: 8rem 0;
+            background: #f8f9fa;
+        }
+        
+        .tech-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .tech-headline {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 3rem;
+            line-height: 1.1;
+        }
+        
+        .tech-description {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+        
+        .molecules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .molecule {
+            text-align: center;
+            padding: 1.5rem;
+            background: #fff;
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+        }
+        
+        .molecule:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-5px);
+        }
+        
+        .molecule-name {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* App Section */
+        .app-section {
+            padding: 8rem 0;
+            background: #000;
+            color: #fff;
+        }
+        
+        .app-content {
+            text-align: center;
+        }
+        
+        .app-headline {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            letter-spacing: -1px;
+        }
+        
+        .app-description {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 0;
+            background: #fff;
+            text-align: center;
+        }
+        
+        .cta-headline {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+        }
+        
+        .cta-description {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .email-signup {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 0;
+            border: 3px solid #000;
+        }
+        
+        .email-input {
+            flex: 1;
+            padding: 1.5rem 2rem;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            outline: none;
+            background: #fff;
+        }
+        
+        .email-input::placeholder {
+            color: #999;
+        }
+        
+        .signup-btn {
+            padding: 1.5rem 3rem;
+            background: #000;
+            color: #fff;
+            border: none;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .signup-btn:hover {
+            background: #333;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 4rem 0;
+            background: #000;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
+            
+            .hero-headline {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtext {
+                font-size: 1.1rem;
+            }
+            
+            .section-title,
+            .tech-headline,
+            .cta-headline {
+                font-size: 2.2rem;
+            }
+            
+            .app-headline {
+                font-size: 2rem;
+            }
+            
+            .email-signup {
+                flex-direction: column;
+                max-width: 300px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .molecules-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.3s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.5s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.7s; }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="logo">SAVA</div>
+                <div class="coming-soon-badge">Coming Soon</div>
+                <h1 class="hero-headline">The Most Powerful Biosensor Ever Created</h1>
+                <p class="hero-subtext">Defining a new paradigm in health monitoring. Propelling humanity into a future of preventative health.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Revolutionary by Design</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3 class="feature-title">Seamless</h3>
+                    <p class="feature-desc">Minimally invasive technology that gathers data just under your skin. Providing unmatched comfort of wear without compromising accuracy.</p>
+                </div>
+                <div class="feature">
+                    <h3 class="feature-title">Affordable</h3>
+                    <p class="feature-desc">Engineered for low cost, high volume manufacturing, to deliver the most advanced tool for anyone in need.</p>
+                </div>
+                <div class="feature">
+                    <h3 class="feature-title">Multi-Molecule</h3>
+                    <p class="feature-desc">A multi sensor architecture to easily expand into new molecules: going beyond glucose alone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="tech-content">
+                <h2 class="tech-headline">Same Platform, Many Sensors</h2>
+                <p class="tech-description">Designed to provide multi-molecule detection in real-time on a single device. Unlocking insights never possible before outside of a lab.</p>
+                
+                <div class="molecules-grid">
+                    <div class="molecule">
+                        <div class="molecule-name">Glucose</div>
+                    </div>
+                    <div class="molecule">
+                        <div class="molecule-name">Lactate</div>
+                    </div>
+                    <div class="molecule">
+                        <div class="molecule-name">Ketones</div>
+                    </div>
+                    <div class="molecule">
+                        <div class="molecule-name">Sodium</div>
+                    </div>
+                    <div class="molecule">
+                        <div class="molecule-name">Histamine</div>
+                    </div>
+                    <div class="molecule">
+                        <div class="molecule-name">Urea</div>
+                    </div>
+                    <div class="molecule">
+                        <div class="molecule-name">Alcohol</div>
+                    </div>
+                    <div class="molecule">
+                        <div class="molecule-name">Cortisol</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Section -->
+    <section class="app-section">
+        <div class="container">
+            <div class="app-content">
+                <h2 class="app-headline">Anywhere. Anytime.</h2>
+                <p class="app-description">A smart, connected platform streamlining continuous data directly to your phone. Gain effortless access to health insights, wherever and whenever.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-headline">Want to be the first to try our device?</h2>
+            <p class="cta-description">Join the revolution. Get early access to the future of health monitoring.</p>
+            
+            <div class="email-signup">
+                <input type="email" class="email-input" placeholder="Enter your email" required>
+                <button class="signup-btn" onclick="joinWaitlist()">Join Waitlist</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">A New Era for Health. Powered by Sava.</p>
+        </div>
+    </footer>
+
+    <script>
+        // REMPLACEZ cette URL par celle de votre Google Apps Script
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/VOTRE_SCRIPT_ID/exec';
+        
+        async function joinWaitlist() {
+            const emailInput = document.querySelector('.email-input');
+            const email = emailInput.value.trim();
+            const button = document.querySelector('.signup-btn');
+            
+            if (!email) {
+                alert('Please enter your email address.');
+                return;
+            }
+            
+            if (!email.includes('@') || email.length < 5) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Désactiver le bouton pendant l'envoi
+            button.textContent = 'JOINING...';
+            button.disabled = true;
+            
+            try {
+                const formData = new FormData();
+                formData.append('email', email);
+                
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('Thank you for joining our waitlist! We\'ll notify you as soon as our revolutionary CGM is available.');
+                    emailInput.value = '';
+                } else {
+                    alert('There was an error. Please try again.');
+                    console.error('Error:', result.error);
+                }
+                
+            } catch (error) {
+                console.error('Network error:', error);
+                alert('Network error. Please check your connection and try again.');
+            }
+            
+            // Réactiver le bouton
+            button.textContent = 'JOIN WAITLIST';
+            button.disabled = false;
+        }
+        
+        // Enter key support for email input
+        document.querySelector('.email-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                joinWaitlist();
+            }
+        });
+    </script>
+</body>
+</html>
